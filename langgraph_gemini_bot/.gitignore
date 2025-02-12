@@ -1,0 +1,62 @@
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyd
+*.egg
+.venv/  # Or virtualenv/ or env/ depending on your setup
+.env # For environment variables (keep this out of version control!)
+*.swp  # Vim swap files
+*~ # Emacs backup files
+.DS_Store # macOS Finder store
+
+# General ignores (adapt as needed)
+.idea/ # IntelliJ IDEA project files
+.vscode/ # VS Code settings
+.mypy_cache/ # Mypy cache files
+build/
+dist/
+*.log
+*.tmp
+*.bak
+.cache/ # General cache directories
+__pycache__/
+.pytest_cache/
+
+# Data files (if large or frequently changing)
+data/  # Or specific data files like: data/large_dataset.csv
+
+# Documentation build outputs
+docs/_build/
+
+# OS-specific files
+.Thumbs.db
+desktop.ini
+
+# Packages and dependencies (if you're managing them manually)
+# If using requirements.txt, you generally don't need to ignore these
+# But if you're NOT using requirements.txt or pip freeze, you might
+# want to ignore specific package folders
+
+# Example:
+# my_package/
+
+# Things you should almost NEVER ignore (double-check these!)
+# .gitignore itself (obviously!)
+# Your main application code files (.py)
+# Configuration files (unless they contain secrets - use .env instead)
+# README, LICENSE, etc.
+
+# If you have specific files or folders that you *do* want to include
+# even if they match a pattern above, you can use the ! (exclamation mark)
+
+# Example:
+# data/small_sample.csv  # Ignore everything in data/ except this file
+#!data/small_sample.csv
+
+
+# If you have a folder like 'tests' but want to ignore a subfolder within it:
+# tests/integration/data/
+#!tests/integration/data/.keep  # But keep the .keep file if it's a placeholder.
+
+# For Jupyter Notebooks, you might want to ignore checkpoint files:
+.ipynb_checkpoints/

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+    <button onclick="sendMessage()">Send Message</button>
+    <div id="messages"></div>
+
+    <script>
+        let socket = new WebSocket("ws://127.0.0.1:8000/ws");
+
+        socket.onopen = function() {
+            console.log("✅ WebSocket connected");
+        };
+
+        socket.onmessage = function(event) {
+            console.log("📩 Received:", event.data);
+            document.getElementById("messages").innerHTML += "<p>" + event.data + "</p>";
+        };
+
+        socket.onerror = function(error) {
+            console.error("❌ WebSocket Error:", error);
+        };
+
+        socket.onclose = function() {
+            console.log("🔴 WebSocket closed");
+        };
+
+        function sendMessage() {
+            let message = "Hello from the frontend!";
+            console.log("📤 Sending:", message);
+            socket.send(message);
+        }
+    </script>
+</body>
+</html>

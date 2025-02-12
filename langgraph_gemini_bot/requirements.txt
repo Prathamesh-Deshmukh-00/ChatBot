@@ -1,0 +1,5 @@
+langchain
+langgraph
+google-generativeai
+python-dotenv
+mysql-connector-python  # Change this based on your database
